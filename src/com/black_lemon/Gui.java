@@ -2,7 +2,6 @@ package com.black_lemon;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionListener;
 import java.awt.image.BufferStrategy;
 
 public class Gui extends JFrame {
@@ -43,10 +42,12 @@ public class Gui extends JFrame {
         graphics.setColor(Color.black);
         graphics.fillRect(0,0, canvas.getWidth() ,canvas.getHeight());
 
-        Rectangle rectangle = game.getRectangle();
-        graphics.setColor(Color.BLUE);
-        graphics.fillRect((int) rectangle.getX(), (int) rectangle.getY(), (int) rectangle.getWidth(), (int) rectangle.getHeight() ) ;
-
+        game.getGameObjects().forEach( gameObject -> graphics.drawImage(
+            gameObject.getSprite(),
+            gameObject.getPosition().getX(),
+            gameObject.getPosition().getY(), 
+            null
+        ));
 
         graphics.dispose();
         bufferStrategy.show();
