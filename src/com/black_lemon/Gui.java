@@ -8,7 +8,7 @@ public class Gui extends JFrame {
 
     private Canvas canvas;
 
-    public Gui(int width , int height){
+    public Gui(int width , int height, Input input){
         setTitle("ESCAPE THE ROOM");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
@@ -22,6 +22,7 @@ public class Gui extends JFrame {
 
         //add canvas component to the root frame
         add(canvas);
+        addKeyListener(input);
         ////Realize the component
         pack();
 

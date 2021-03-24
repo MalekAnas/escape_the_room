@@ -10,12 +10,13 @@ public class Game {
     private Gui gui;
     private Rectangle rectangle;
     private List<GameObject> gameObjects;
-
+    private Input input;
 
     public Game(int width , int height) {
-        gui = new Gui(width,height);
+        input = new Input();
+        gui = new Gui(width,height, input);
         gameObjects = new ArrayList<>();
-        gameObjects.add(new Square());
+        gameObjects.add(new Player(new PlayerController(input)));
     }
 
 

@@ -7,6 +7,7 @@ public abstract class GameObject {
 
     protected Position position;
     protected Size size;
+    
 
     public GameObject() {
          position = new Position(50,50);
