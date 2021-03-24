@@ -1,4 +1,4 @@
-package com.black_lemon;
+package com.black_lemon.controller;
 
 public interface Controller {
     

@@ -1,4 +1,4 @@
-package com.black_lemon;
+package com.black_lemon.model;
 
-public class Key extends GameObject{
+public class Key  {
 }

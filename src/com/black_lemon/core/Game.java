@@ -1,8 +1,14 @@
-package com.black_lemon;
+package com.black_lemon.core;
 
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.black_lemon.controller.Input;
+import com.black_lemon.controller.PlayerController;
+import com.black_lemon.model.Player;
+
+ 
 
 public class Game {
 
@@ -14,7 +20,7 @@ public class Game {
 
     public Game(int width , int height) {
         input = new Input();
-        gui = new Gui(width,height, input);
+        gui = new Gui(width, height, input);
         gameObjects = new ArrayList<>();
         gameObjects.add(new Player(new PlayerController(input)));
     }

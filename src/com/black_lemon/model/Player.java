@@ -1,13 +1,20 @@
-package com.black_lemon;
+package com.black_lemon.model;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Graphics2D;
+import java.awt.Image;
 import java.awt.image.BufferedImage;
+
+import com.black_lemon.controller.Controller;
+import com.black_lemon.core.GameObject;
+import com.black_lemon.core.Position;
+
 
 public class Player extends GameObject {
 
 
     private Controller controller;
-    private final int speed = 3;
+    private final int speed = 10;
 
     public Player(Controller controller) {
         super();

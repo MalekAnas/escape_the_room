@@ -1,17 +1,22 @@
-package com.black_lemon;
+package com.black_lemon.core;
 
 import javax.swing.*;
+
+import com.black_lemon.controller.Input;
+
 import java.awt.*;
 import java.awt.image.BufferStrategy;
 
 public class Gui extends JFrame {
 
     private Canvas canvas;
+    private Renderer renderer;
 
     public Gui(int width , int height, Input input){
         setTitle("ESCAPE THE ROOM");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
+        this.renderer = new Renderer();
 
         //init the canvas
         canvas = new Canvas();
@@ -43,12 +48,7 @@ public class Gui extends JFrame {
         graphics.setColor(Color.black);
         graphics.fillRect(0,0, canvas.getWidth() ,canvas.getHeight());
 
-        game.getGameObjects().forEach( gameObject -> graphics.drawImage(
-            gameObject.getSprite(),
-            gameObject.getPosition().getX(),
-            gameObject.getPosition().getY(), 
-            null
-        ));
+        renderer.render(game, graphics);
 
         graphics.dispose();
         bufferStrategy.show();
